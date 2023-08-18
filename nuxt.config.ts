@@ -5,5 +5,12 @@ export default defineNuxtConfig({
     head: {
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
     }
+  },
+  css: ['@/assets/css/reset.css', '@/assets/css/global.css'],
+  modules: ['@nuxtjs/google-fonts'],
+  googleFonts: {
+    families: {
+      'Kumbh+Sans': [400, 700]
+    }
   }
 })

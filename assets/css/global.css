@@ -1,0 +1,29 @@
+:root {
+  --clr-primary: #5964E0;
+  --clr-primary-400: #939BF4;
+  --clr-neutral-100: #FFFFFF;
+  --clr-neutral-200: #F4F6F8;
+  --clr-neutral-400: #9DAEC2;
+  --clr-neutral-500: #6E8098;
+  --clr-neutral-700: #121721;
+  --clr-neutral-800: #19202D;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1.5rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
