@@ -8,8 +8,10 @@ const allJobs = await useAllJobs()
     <!-- filter form -->
     <!-- listings -->
     <!-- load more button -->
-    <div v-for="j in allJobs">
-      {{ j.company }}
+    <div v-for="job in allJobs" :key="job.id">
+      <NuxtLink :to="`jobs/${job.id}`">
+        {{ job.company }}
+      </NuxtLink>
     </div>
   </main>
 </template>
