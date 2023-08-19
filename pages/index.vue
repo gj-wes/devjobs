@@ -5,13 +5,25 @@ const allJobs = await useAllJobs()
 </script>
 <template>
   <main>
+    <div class="container">
     <!-- filter form -->
     <!-- listings -->
-    <!-- load more button -->
-    <div v-for="job in allJobs" :key="job.id">
-      <NuxtLink :to="`jobs/${job.id}`">
-        {{ job.company }}
-      </NuxtLink>
+    <div class="list-container">
+      <JobItem v-for="job in allJobs" :key="job.id" 
+      :job="job"
+      />
+    </div>
+      
+      <!-- load more button -->
     </div>
   </main>
 </template>
+
+<style scoped>
+.list-container {
+  padding-block: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem
+}
+</style>

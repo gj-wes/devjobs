@@ -1,7 +1,9 @@
 <template>
   <header>
     <div class="container">
-      <img src="~assets/desktop/logo.svg" alt="Devjobs logo" class="logo">
+      <NuxtLink to="/">
+        <img src="~assets/desktop/logo.svg" alt="Devjobs logo" class="logo">
+      </NuxtLink>
       <div>
         Switch
       </div>
