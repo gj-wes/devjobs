@@ -25,6 +25,12 @@ defineProps({
   border-radius: 5px;
   text-align: center;
   padding-block: 0.75rem;
+  transition: background-color .2s linear;
+}
+
+.cta:hover,
+.cta:active {
+  background-color: var(--clr-primary-400);
 }
 
 .link {
@@ -40,5 +46,9 @@ defineProps({
   background-color: rgba(89, 100, 224, 0.1);
   color: var(--clr-primary);
   width: 8.75rem;
+}
+.alt:hover,
+.alt:active {
+  background-color: rgba(89, 100, 224, 0.3);
 }
 </style>
