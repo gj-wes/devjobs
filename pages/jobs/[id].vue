@@ -2,18 +2,22 @@
 // get job details by id
 const route = useRoute()
 const job = await useJobDetails(route.params.id)
+
+const {logoBackground, logo, company, website, apply, postedAt, contract, position, location, description, requirements, role} = job.value[0] 
+
+const logoPath = logo.replace('./','/_nuxt/');
 </script>
 <template>
   <div class="description-container">
     <!-- company info -->
     <div class="container company-info">
-      <div :style="{ 'background-color': job[0].logoBackground }" class="logo">
-        <img :src="job[0].logo.replace('./','/_nuxt/')" alt="">
+      <div :style="{ 'background-color': logoBackground }" class="logo">
+        <img :src="logoPath" alt="">
       </div>
       <h3 class="company-name">
-        {{ job[0].company }}
+        {{ company }}
       </h3>
-      <TheButton link alt :url="job[0].website">Company Site</TheButton>
+      <TheButton link alt :url="website">Company Site</TheButton>
     </div>
     <div class="container">
       <!-- job details -->
@@ -21,21 +25,21 @@ const job = await useJobDetails(route.params.id)
         <div class="job-details">
           <div>
             <div class="detail">
-              <span>{{ job[0].postedAt }}</span> &bull; <span>{{ job[0].contract }}</span>
+              <span>{{ postedAt }}</span> &bull; <span>{{ contract }}</span>
             </div>
             <h3 class="job-title">
-              {{ job[0].position }}
+              {{ position }}
             </h3>
             <h4 class="location">
-              {{ job[0].location }}
+              {{ location }}
             </h4>
           </div>
 
-          <TheButton link :url="job[0].apply">Apply Now</TheButton>
+          <TheButton link :url="apply">Apply Now</TheButton>
         </div>
 
         <p>
-          {{ job[0].description }}
+          {{ description }}
         </p>
 
         <h3 class="desciption-subheader">
@@ -43,11 +47,11 @@ const job = await useJobDetails(route.params.id)
         </h3>
 
         <p>
-          {{ job[0].requirements.content }}
+          {{ requirements.content }}
         </p>
 
         <ul>
-          <li v-for="req in job[0].requirements.items">
+          <li v-for="req in requirements.items">
             {{ req }}
           </li>
         </ul>
@@ -57,11 +61,11 @@ const job = await useJobDetails(route.params.id)
         </h3>
 
         <p>
-          {{ job[0].role.content }}
+          {{ role.content }}
         </p>
 
         <ol>
-          <li v-for="item in job[0].role.items">
+          <li v-for="item in role.items">
             {{ item }}
           </li>
         </ol>
@@ -70,7 +74,7 @@ const job = await useJobDetails(route.params.id)
   </div>
   <!-- sticky 'apply now' footer -->
   <footer>
-    <TheButton link :url="job[0].apply">Apply Now</TheButton>
+    <TheButton link :url="apply">Apply Now</TheButton>
   </footer>
 </template>
 
@@ -111,7 +115,7 @@ const job = await useJobDetails(route.params.id)
 .detail {
   color: var(--clr-neutral-500);
   font-size: var(--fs-body);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 .job-details {
   margin-bottom: 2rem;
