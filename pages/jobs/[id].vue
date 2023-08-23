@@ -10,7 +10,7 @@ const logoPath = logo.replace('./','/_nuxt/');
 <template>
   <div class="description-container">
     <!-- company info -->
-    <div class="container company-info">
+    <div class="container job-container company-info">
       <div :style="{ 'background-color': logoBackground }" class="logo">
         <img :src="logoPath" alt="">
       </div>
@@ -19,7 +19,7 @@ const logoPath = logo.replace('./','/_nuxt/');
       </h3>
       <TheButton link alt :url="website">Company Site</TheButton>
     </div>
-    <div class="container">
+    <div class="container job-container">
       <!-- job details -->
       <div class="job-description">
         <div class="job-details">
@@ -74,15 +74,29 @@ const logoPath = logo.replace('./','/_nuxt/');
   </div>
   <!-- sticky 'apply now' footer -->
   <footer>
-    <TheButton link :url="apply">Apply Now</TheButton>
+    <div class="container footer-container">
+      <div>
+        <h3 class="job-title">
+          {{ position }}
+        </h3>
+        <h3 class="company-name">
+          {{ company }}
+        </h3>
+      </div>
+      <TheButton link :url="apply">Apply Now</TheButton>
+    </div>
   </footer>
 </template>
 
 <style scoped>
-.container {
+.job-container {
   background-color: var(--clr-neutral-100);
   border-radius: 0.375rem;
   padding: 2.5rem 1.5rem;
+}
+.job-container,
+.footer-container {
+  max-width: 45.625rem;
 }
 
 .company-info {
@@ -112,6 +126,31 @@ const logoPath = logo.replace('./','/_nuxt/');
   left: 50%;
   transform: translateX(-50%);
 }
+@media (min-width: 45.625rem) {
+  .company-info {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .company-info.job-container {
+    padding: 0;
+    padding-right: 1.5rem;
+  }
+
+  .company-info .company-name {
+    margin-right: auto;
+  }
+
+  .logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 0;
+    position: static;
+    align-self: stretch;
+    transform: translateX(0);
+  }
+}
 .detail {
   color: var(--clr-neutral-500);
   font-size: var(--fs-body);
@@ -127,6 +166,12 @@ const logoPath = logo.replace('./','/_nuxt/');
   font-size: var(--fs-header-sm);
   font-weight: var(--fw-bold);
   margin-bottom: 0.5rem;
+}
+.footer-container .company-name {
+  color: var(--clr-neutral-500);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  margin-bottom: 0;
 }
 .desciption-subheader {
   margin-bottom: 1.5rem;
@@ -172,5 +217,20 @@ footer {
   padding: 1.5rem;
   position: sticky;
   bottom: 0;
+}
+
+.footer-container div {
+  display: none;
+}
+@media (min-width: 45.625rem) {
+  .job-details,
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-container div {
+    display: block;
+  }
 }
 </style>

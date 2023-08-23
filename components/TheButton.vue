@@ -28,6 +28,12 @@ defineProps({
   transition: background-color .2s linear;
 }
 
+@media (min-width: 45.625rem) {
+  .cta {
+    width: 8.75rem;
+  }
+}
+
 .cta:hover,
 .cta:active {
   background-color: var(--clr-primary-400);
