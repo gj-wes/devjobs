@@ -44,8 +44,15 @@ defineProps({
 }
 
 .btn {
+  cursor: pointer;
   border: none;
   width: 100%;
+}
+
+@media (min-width: 45.625rem) {
+  .btn {
+    width: 8.75rem;
+  }
 }
 
 .alt {

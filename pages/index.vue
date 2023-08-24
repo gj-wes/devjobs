@@ -29,5 +29,7 @@ const allJobs = await useAllJobs()
 }
 .btn-load-more {
   margin-bottom: 3rem;
+  margin-inline: auto;
+  justify-self: center;
 }
 </style>
