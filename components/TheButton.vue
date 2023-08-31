@@ -25,6 +25,7 @@ defineProps({
   border-radius: 5px;
   text-align: center;
   padding-block: 0.75rem;
+  padding-inline: 1rem;
   transition: background-color .2s linear;
 }
 

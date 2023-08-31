@@ -7,6 +7,8 @@ const allJobs = await useAllJobs()
   <main>
     <div class="container">
       <!-- filter form -->
+      <TheFilterForm />
+      
       <!-- listings -->
       <div class="list-container">
         <JobItem v-for="job in allJobs" :key="job.id" 
