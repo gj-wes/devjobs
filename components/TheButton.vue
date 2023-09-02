@@ -17,7 +17,8 @@ defineProps({
 
 <style scoped>
 .cta {
-  display: block;
+  display: flex;
+  justify-content: center;
   background-color: var(--clr-primary);
   color: var(--clr-neutral-100);
   font-size: var(--fs-body);
