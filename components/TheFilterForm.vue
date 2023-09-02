@@ -91,6 +91,8 @@ input[type="text"] {
   width: 100%;
   line-height: 2;
   caret-color: var(--clr-primary);
+  background-color: transparent;
+  color: var(--clr-neutral-800);
 }
 @media (max-width: 500px) { 
   input[type="text"] {
@@ -104,6 +106,7 @@ input[type="text"] {
   display: flex;
   align-items: center;
   white-space: nowrap;
+  color: var(--clr-neutral-800);
 }
 @media (max-width: 730px) {
   .full-time-check span {

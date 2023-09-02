@@ -29,6 +29,9 @@ defineProps({
   padding-inline: 1rem;
   transition: background-color .2s linear;
 }
+.dark .cta {
+  color: var(--clr-neutral-800);
+}
 
 @media (min-width: 45.625rem) {
   .cta {

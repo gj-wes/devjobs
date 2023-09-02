@@ -5,7 +5,7 @@
         <img src="~assets/desktop/logo.svg" alt="Devjobs logo" class="logo">
       </NuxtLink>
       <div>
-        Switch
+        <TheThemeSwitch />
       </div>
     </div>
   </header>

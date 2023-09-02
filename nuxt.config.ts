@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     }
   },
   css: ['@/assets/css/reset.css', '@/assets/css/global.css'],
-  modules: ['@nuxtjs/google-fonts'],
+  modules: ['@nuxtjs/google-fonts', '@vueuse/nuxt'],
   googleFonts: {
     families: {
       'Kumbh+Sans': [400, 700]
